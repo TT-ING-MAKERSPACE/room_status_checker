@@ -1,0 +1,50 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "raspiHost",
+            "description": "What type of component do you want to create?",
+            "options": [
+                "192.168.179.215"
+            ],
+            "default": "MyPi4"
+        }],
+    "tasks": [
+        {
+            "label": "CompileGui",
+            "type": "shell",
+            "command": "${workspaceRoot}/script/compile.bat",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "restart",
+            "type": "shell",
+            "command": "ssh pi@${input:raspiHost} sudo shutdown -r now",
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "shutdown",
+            "type": "shell",
+            "command": "ssh pi@${input:raspiHost}sudo shutdown -h now",
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "copySrc",
+            "type": "shell",
+            "command": "ssh pi@${input:raspiHost} mkdir -p ~/RoomChecker && scp -r src/* pi@${input:raspiHost}:RoomChecker",
+            "problemMatcher": []
+        }
+    ]
+}
