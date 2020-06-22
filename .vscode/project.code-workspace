@@ -1,0 +1,46 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"extensions": {
+        "recommendations": [
+            "donjayamanne.githistory",
+            "etmoffat.pip-packages",
+            "Shan.code-settings-sync"
+	]
+	},
+	"settings":
+	{
+		"pip-updater.AutoUpdate": true,
+        "pip-updater.PackagesAndVersions": [
+            {
+                "packageName": "pylint",
+                "version": "latest"
+            },
+            {
+                "packageName": "debugpy",
+                "version": "1.0.0.b2"
+            }
+        ],
+        "python.testing.unittestEnabled": true,
+        "python.formatting.provider": "autopep8",
+        "python.formatting.autopep8Args": [
+            "--max-line-length=120"
+        ],
+        "python.pythonPath": "python.exe",
+        "python.testing.unittestArgs": [
+            "-v",
+            "-s",
+            "./test",
+            "-p",
+            "*test*.py"
+        ],
+        "python.testing.cwd": "",
+        "editor.formatOnPaste": true,
+        "git.autofetch": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.enabled": true,
+	}
+}
