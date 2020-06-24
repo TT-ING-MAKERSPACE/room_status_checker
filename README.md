@@ -56,3 +56,20 @@ It is usually displayed on the e-Paper display.
 
 You can use VNC Viewer to connect to it directly or per SSH.
 To use passwordless SSH see https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md
+
+### Develop remotely on the Raspberry (for HW development)
+
+You can use your local VsCode IDE and develop directly on the RPi with
+Python, debugger and Git.
+
+To use this the remote ssh extension is needed in VsCode (is in the recommended Extensions).
+
+To Start click the >< Icon in the bottom left under the settings Symbol and select Remote SSH: Connect to Host
+* Enter ssh pi@<IP_ADDRESS> 
+* Enter the password
+* You can change the opened location on the Raspberry with the Remote Explorer 
+* The git project should exist directly in ~/<Repo_name>
+* Set a Python Interpreter
+* Now you can edit and debug directly on the Raspberry
+* Don't commit Raspberry specific settings!
+
