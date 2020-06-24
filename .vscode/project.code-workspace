@@ -6,7 +6,7 @@
 	],
 	"extensions": {
         "recommendations": [
-            "donjayamanne.githistory",
+            "ms-python.python",
             "etmoffat.pip-packages",
             "Shan.code-settings-sync",
             "ms-vscode-remote.remote-ssh",
